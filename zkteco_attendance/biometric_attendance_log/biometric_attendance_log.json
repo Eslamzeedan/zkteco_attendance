@@ -1,0 +1,179 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-01-01 00:00:00.000000",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "employee_id",
+  "column_break_4",
+  "device_user_id",
+  "device",
+  "section_break_punch",
+  "timestamp",
+  "column_break_8",
+  "punch_type",
+  "status_code",
+  "section_break_sync",
+  "sync_date",
+  "column_break_12",
+  "processed",
+  "section_break_error",
+  "error_message"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee",
+   "search_index": 1
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Data",
+   "label": "Employee ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "device_user_id",
+   "fieldtype": "Data",
+   "label": "Device User ID",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "device",
+   "fieldtype": "Link",
+   "label": "Device",
+   "options": "Biometric Device",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_punch",
+   "fieldtype": "Section Break",
+   "label": "Punch Details"
+  },
+  {
+   "fieldname": "timestamp",
+   "fieldtype": "Datetime",
+   "label": "Timestamp",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Unknown",
+   "fieldname": "punch_type",
+   "fieldtype": "Select",
+   "label": "Punch Type",
+   "options": "IN\nOUT\nUnknown",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status_code",
+   "fieldtype": "Int",
+   "label": "Status Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_sync",
+   "fieldtype": "Section Break",
+   "label": "Sync Information"
+  },
+  {
+   "fieldname": "sync_date",
+   "fieldtype": "Datetime",
+   "label": "Sync Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "processed",
+   "fieldtype": "Select",
+   "label": "Processed",
+   "options": "Pending\nProcessed\nFailed\nSkipped\nReprocessed",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_error",
+   "fieldtype": "Section Break",
+   "collapsible": 1,
+   "label": "Error Information"
+  },
+  {
+   "fieldname": "error_message",
+   "fieldtype": "Small Text",
+   "label": "Error Message",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ZKTeco Attendance",
+ "name": "Biometric Attendance Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "ZKTeco Manager",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "ZKTeco User",
+   "share": 1
+  }
+ ],
+ "sort_field": "timestamp",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
