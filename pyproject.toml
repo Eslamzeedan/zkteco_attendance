@@ -12,8 +12,8 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "pyzk==0.7.7",
-    "pytz==2024.1"
+    "pyzk>=0.7.6",
+    "pytz>=2024.1"
 ]
 
 [tool.setuptools.packages.find]
