@@ -1,4 +1,4 @@
-# Copyright (c) 2024 Your Organization
+# Copyright (c) 2026 Eslam Zedan
 # MIT License - See LICENSE file for details
 
 """
