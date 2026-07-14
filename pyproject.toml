@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -7,7 +7,7 @@ name = "zkteco_attendance"
 version = "1.0.0"
 description = "ZKTeco Biometric Attendance Integration for ERPNext v15"
 authors = [
-    {name = "Eslam Zeedan", email = "your_email@example.com"}
+    {name = "Eslam Zeedan"}
 ]
 readme = "README.md"
 requires-python = ">=3.10"
@@ -16,5 +16,18 @@ dependencies = [
     "pytz>=2024.1"
 ]
 
-[tool.setuptools.packages.find]
-where = ["."]
+[tool.setuptools]
+# Explicitly define packages to prevent uv/setuptools directory resolution issues
+packages = [
+    "zkteco_attendance",
+    "zkteco_attendance.utils",
+    "zkteco_attendance.tasks",
+    "zkteco_attendance.overrides",
+    "zkteco_attendance.biometric_device",
+    "zkteco_attendance.biometric_employee_mapping",
+    "zkteco_attendance.biometric_attendance_log",
+    "zkteco_attendance.biometric_sync_log"
+]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.css", "*.js"]
