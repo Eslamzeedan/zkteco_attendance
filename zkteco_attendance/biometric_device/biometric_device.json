@@ -1,0 +1,198 @@
+{
+ "actions": [],
+ "autoname": "field:device_name",
+ "creation": "2024-01-01 00:00:00.000000",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "device_name",
+  "device_ip",
+  "device_port",
+  "column_break_4",
+  "device_serial_number",
+  "device_model",
+  "password",
+  "section_break_location",
+  "branch",
+  "location",
+  "column_break_9",
+  "status",
+  "sync_enabled",
+  "sync_frequency",
+  "section_break_sync",
+  "last_sync_time",
+  "column_break_13",
+  "test_connection",
+  "manual_sync",
+  "section_break_remarks",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "device_name",
+   "fieldtype": "Data",
+   "label": "Device Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "device_ip",
+   "fieldtype": "Data",
+   "label": "Device IP",
+   "reqd": 1
+  },
+  {
+   "default": "4370",
+   "fieldname": "device_port",
+   "fieldtype": "Int",
+   "label": "Device Port",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "device_serial_number",
+   "fieldtype": "Data",
+   "label": "Device Serial Number"
+  },
+  {
+   "fieldname": "device_model",
+   "fieldtype": "Select",
+   "label": "Device Model",
+   "options": "\nMB2000\nMB360\nF22\ninBio160\ninBio260\ninBio460\nOther"
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "label": "Device Password",
+   "depends_on": "eval:doc.device_model"
+  },
+  {
+   "fieldname": "section_break_location",
+   "fieldtype": "Section Break",
+   "label": "Location Details"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive\nOffline\nError\nMaintenance",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "sync_enabled",
+   "fieldtype": "Check",
+   "label": "Sync Enabled"
+  },
+  {
+   "default": "Every 5 Minutes",
+   "fieldname": "sync_frequency",
+   "fieldtype": "Select",
+   "label": "Sync Frequency",
+   "options": "Every 5 Minutes\nEvery 15 Minutes\nEvery 30 Minutes\nEvery Hour\nManual Only",
+   "depends_on": "eval:doc.sync_enabled"
+  },
+  {
+   "fieldname": "section_break_sync",
+   "fieldtype": "Section Break",
+   "label": "Sync Information"
+  },
+  {
+   "fieldname": "last_sync_time",
+   "fieldtype": "Datetime",
+   "label": "Last Sync Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_connection",
+   "fieldtype": "Button",
+   "label": "Test Connection"
+  },
+  {
+   "fieldname": "manual_sync",
+   "fieldtype": "Button",
+   "label": "Manual Sync"
+  },
+  {
+   "fieldname": "section_break_remarks",
+   "fieldtype": "Section Break",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ZKTeco Attendance",
+ "name": "Biometric Device",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "ZKTeco Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "ZKTeco User",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
