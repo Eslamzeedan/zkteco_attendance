@@ -5,9 +5,9 @@ from . import __version__ as app_version
 
 app_name = "zkteco_attendance"
 app_title = "ZKTeco Attendance"
-app_publisher = "Your Organization"
+app_publisher = "Eslam Zedan"
 app_description = "ZKTeco Biometric Attendance Integration for ERPNext v15"
-app_email = "dev@yourorg.com"
+app_email = "EslamZeeddaan@gmail.com"
 app_license = "MIT"
 
 # Version
