@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zkteco_attendance"
+version = "1.0.0"
+description = "ZKTeco Biometric Attendance Integration for ERPNext v15"
+authors = [
+    {name = "Eslam Zeedan", email = "your_email@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pyzk==0.7.7",
+    "pytz==2024.1"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
