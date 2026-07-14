@@ -1,0 +1,161 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-01-01 00:00:00.000000",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "column_break_3",
+  "erpnext_employee_id",
+  "section_break_biometric",
+  "biometric_user_id",
+  "device",
+  "column_break_7",
+  "mapping_type",
+  "match_score",
+  "section_break_audit",
+  "created_by",
+  "creation"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "erpnext_employee_id",
+   "fieldtype": "Data",
+   "label": "ERPNext Employee ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_biometric",
+   "fieldtype": "Section Break",
+   "label": "Biometric Details"
+  },
+  {
+   "fieldname": "biometric_user_id",
+   "fieldtype": "Data",
+   "label": "Biometric User ID",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "device",
+   "fieldtype": "Link",
+   "label": "Device",
+   "options": "Biometric Device",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Manual",
+   "fieldname": "mapping_type",
+   "fieldtype": "Select",
+   "label": "Mapping Type",
+   "options": "Manual\nAuto\nSuggested",
+   "read_only": 1
+  },
+  {
+   "fieldname": "match_score",
+   "fieldtype": "Percent",
+   "label": "Match Score",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_audit",
+   "fieldtype": "Section Break",
+   "label": "Audit Information"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Data",
+   "label": "Created By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "creation",
+   "fieldtype": "Datetime",
+   "label": "Created On",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ZKTeco Attendance",
+ "name": "Biometric Employee Mapping",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "ZKTeco Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "ZKTeco User",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "unique_constraints": [
+  {
+   "constraint_name": "unique_device_user_mapping",
+   "unique_fields": [
+    "biometric_user_id",
+    "device"
+   ]
+  }
+ ]
+}
