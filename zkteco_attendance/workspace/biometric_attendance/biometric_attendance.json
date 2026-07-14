@@ -1,0 +1,99 @@
+{
+ "charts": [],
+ "content": "[\n {\n  \"type\": \"header\",\n  \"data\": {\n   \"text\": \"Biometric Attendance\",\n   \"subtext\": \"ZKTeco Device Integration\",\n   \"col\": 12\n  }\n },\n {\n  \"type\": \"spacer\",\n  \"data\": {\n   \"col\": 12\n  }\n },\n {\n  \"type\": \"number_card\",\n  \"data\": {\n   \"label\": \"Connected Devices\",\n   \"number\": \"frappe.db.count(\\\"Biometric Device\\\", {\\\"status\\\": \\\"Active\\\"})\",\n   \"col\": 3\n  }\n },\n {\n  \"type\": \"number_card\",\n  \"data\": {\n   \"label\": \"Today's Punches\",\n   \"number\": \"frappe.db.count(\\\"Biometric Attendance Log\\\", {\\\"timestamp\\\": [\\\">=\\\", frappe.utils.today()]})\",\n   \"col\": 3\n  }\n },\n {\n  \"type\": \"number_card\",\n  \"data\": {\n   \"label\": \"Sync Failures (24h)\",\n   \"number\": \"frappe.db.count(\\\"Biometric Sync Log\\\", {\\\"status\\\": \\\"Failed\\\", \\\"sync_start\\\": [\\\">=\\\", frappe.utils.add_days(frappe.utils.today(), -1)]})\",\n   \"col\": 3,\n   \"color\": \"#d63031\"\n  }\n },\n {\n  \"type\": \"number_card\",\n  \"data\": {\n   \"label\": \"Unmapped Users\",\n   \"number\": \"frappe.db.sql(\\\"SELECT COUNT(DISTINCT device_user_id) FROM `tabBiometric Attendance Log` WHERE NOT EXISTS (SELECT 1 FROM `tabBiometric Employee Mapping` bem WHERE bem.biometric_user_id = `tabBiometric Attendance Log`.device_user_id AND bem.device = `tabBiometric Attendance Log`.device)\\\")[0][0]\",\n   \"col\": 3,\n   \"color\": \"#fdcb6e\"\n  }\n },\n {\n  \"type\": \"spacer\",\n  \"data\": {\n   \"col\": 12\n  }\n },\n {\n  \"type\": \"shortcut\",\n  \"data\": {\n   \"label\": \"Add Device\",\n   \"doc_type\": \"Biometric Device\",\n   \"col\": 3\n  }\n },\n {\n  \"type\": \"shortcut\",\n  \"data\": {\n   \"label\": \"Add Mapping\",\n   \"doc_type\": \"Biometric Employee Mapping\",\n   \"col\": 3\n  }\n },\n {\n  \"type\": \"shortcut\",\n  \"data\": {\n   \"label\": \"Sync All Devices\",\n   \"action\": \"zkteco_attendance.api.sync_all_devices\",\n   \"col\": 3\n  }\n },\n {\n  \"type\": \"shortcut\",\n  \"data\": {\n   \"label\": \"Auto Map Employees\",\n   \"action\": \"zkteco_attendance.api.auto_map_employees\",\n   \"col\": 3\n  }\n },\n {\n  \"type\": \"spacer\",\n  \"data\": {\n   \"col\": 12\n  }\n },\n {\n  \"type\": \"header\",\n  \"data\": {\n   \"text\": \"Quick Links\",\n   \"subtext\": \"\",\n   \"col\": 12\n  }\n },\n {\n  \"type\": \"card\",\n  \"data\": {\n   \"card_name\": \"Device Management\",\n   \"col\": 4\n  }\n },\n {\n  \"type\": \"card\",\n  \"data\": {\n   \"card_name\": \"Employee Mapping\",\n   \"col\": 4\n  }\n },\n {\n  \"type\": \"card\",\n  \"data\": {\n   \"card_name\": \"Sync Logs\",\n   \"col\": 4\n  }\n },\n {\n  \"type\": \"spacer\",\n  \"data\": {\n   \"col\": 12\n  }\n },\n {\n  \"type\": \"header\",\n  \"data\": {\n   \"text\": \"Recent Sync Activity\",\n   \"subtext\": \"\",\n   \"col\": 12\n  }\n },\n {\n  \"type\": \"table\",\n  \"data\": {\n   \"table_name\": \"Recent Syncs\",\n   \"doc_type\": \"Biometric Sync Log\",\n   \"limit\": 10,\n   \"col\": 12\n  }\n }\n]",
+ "creation": "2024-01-01 00:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "filters": [],
+ "hide_custom": 0,
+ "icon": "device-desktop",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Biometric Attendance",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Device Management",
+   "link_count": 2,
+   "link_to": "Biometric Device",
+   "links": [
+    {
+     "hidden": 0,
+     "is_query_report": 0,
+     "label": "Biometric Device",
+     "link_count": 0,
+     "link_to": "Biometric Device",
+     "onboard": 0,
+     "type": "DocType"
+    },
+    {
+     "hidden": 0,
+     "is_query_report": 0,
+     "label": "Biometric Sync Log",
+     "link_count": 0,
+     "link_to": "Biometric Sync Log",
+     "onboard": 0,
+     "type": "DocType"
+    }
+   ],
+   "onboard": 0,
+   "type": "Link Group"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee Mapping",
+   "link_count": 2,
+   "link_to": "Biometric Employee Mapping",
+   "links": [
+    {
+     "hidden": 0,
+     "is_query_report": 0,
+     "label": "Biometric Employee Mapping",
+     "link_count": 0,
+     "link_to": "Biometric Employee Mapping",
+     "onboard": 0,
+     "type": "DocType"
+    },
+    {
+     "hidden": 0,
+     "is_query_report": 0,
+     "label": "Biometric Attendance Log",
+     "link_count": 0,
+     "link_to": "Biometric Attendance Log",
+     "onboard": 0,
+     "type": "DocType"
+    }
+   ],
+   "onboard": 0,
+   "type": "Link Group"
+  }
+ ],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ZKTeco Attendance",
+ "name": "Biometric Attendance",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "ZKTeco Manager"
+  },
+  {
+   "role": "ZKTeco User"
+  },
+  {
+   "role": "HR Manager"
+  }
+ ],
+ "sequence_id": 1.0,
+ "shortcuts": [],
+ "title": "Biometric Attendance"
+}
