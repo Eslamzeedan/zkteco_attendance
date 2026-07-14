@@ -1,0 +1,191 @@
+/*
+ * ZKTeco Attendance Integration - Custom Styles
+ */
+
+/* Device Status Indicators */
+.device-status-active {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.device-status-offline {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.device-status-error {
+    color: #e74c3c;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+.device-status-maintenance {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Sync Status Indicators */
+.sync-status-completed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.sync-status-failed {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.sync-status-in-progress {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+/* Log Process Status */
+.log-status-pending {
+    color: #856404;
+    background-color: #fff3cd;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.log-status-processed {
+    color: #155724;
+    background-color: #d4edda;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.log-status-failed {
+    color: #721c24;
+    background-color: #f8d7da;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.log-status-skipped {
+    color: #383d41;
+    background-color: #e2e3e5;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Dashboard Cards */
+.zkteco-dashboard-card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.zkteco-dashboard-card h4 {
+    color: #6c757d;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.zkteco-dashboard-card .value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #212529;
+}
+
+/* Mapping Suggestions */
+.mapping-suggestion {
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mapping-suggestion .match-score {
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.match-score-high {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.match-score-medium {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.match-score-low {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Button Styles */
+.btn-zkteco-primary {
+    background-color: #3498db;
+    border-color: #2980b9;
+    color: white;
+}
+
+.btn-zkteco-primary:hover {
+    background-color: #2980b9;
+    border-color: #3498db;
+    color: white;
+}
+
+.btn-zkteco-success {
+    background-color: #27ae60;
+    border-color: #219a52;
+    color: white;
+}
+
+.btn-zkteco-success:hover {
+    background-color: #219a52;
+    border-color: #27ae60;
+    color: white;
+}
+
+.btn-zkteco-danger {
+    background-color: #e74c3c;
+    border-color: #c0392b;
+    color: white;
+}
+
+.btn-zkteco-danger:hover {
+    background-color: #c0392b;
+    border-color: #e74c3c;
+    color: white;
+}
+
+/* Progress Bar */
+.sync-progress {
+    height: 20px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sync-progress-bar {
+    height: 100%;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .zkteco-dashboard-card .value {
+        font-size: 24px;
+    }
+    
+    .mapping-suggestion {
+        flex-direction: column;
+        text-align: center;
+    }
+}
